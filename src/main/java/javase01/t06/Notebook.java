@@ -22,18 +22,6 @@ public class Notebook {
     public static void main(String[] args) {
         Notebook notebook = new Notebook();
 
-//        Note note = new Note();
-//        note.setMessage("My first note");
-//        notebook.addNote(note);
-//
-//        note = new Note();
-//        note.setMessage("Second note");
-//        notebook.addNote(note);
-//
-//        notebook.updateNote();
-//        notebook.getNotes();
-
-
         while(true) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter Action: ");
@@ -75,23 +63,6 @@ public class Notebook {
      * <p>If length of <cod>notes</cod> array equals 0, create new Note[1]</p>
      * <p>If array of <cod>notes</cod> is full, creates a new array of notes with twice length of current and copy old notes</p>
      *
-     * @param note type of Note to be added in Notebook
-     */
-    public void addNote(Note note){
-        if(N == notes.length){
-            Note[] copy = N == 0 ? new Note[1]: new Note[N*2];
-            for (int i = 0; i < N; i++)
-                copy[i] = notes[i];
-            notes = copy;
-        }
-        notes[N++] = note;
-    }
-
-    /**
-     * Add note to the end of notebook with index N+1.
-     *
-     * <p>If array is full, creates a new array of notes with twice length of current and copy old notes</p>
-     * <p>Asking you enter message for new note</p>
      */
     public void addNote(){
         if(N == notes.length){
