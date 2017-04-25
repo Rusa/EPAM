@@ -6,11 +6,14 @@ import java.util.*;
  * Created by rusamaha on 4/23/17.
  */
 
-//
-//Даны действительные числа a1, a2 … a[2n].  Найти
+// Код для условия:
+// Даны действительные числа a1, a2 … a[2n].  Найти
 // max(a[1]+a[2n],a[2]+a[2n-1],a[1]+a[2n],....a[n]+a[n+1])
 //
 
+
+// From sides to center version -
+// actual version with changed conditions is SolutionWithChangedTerms.java in current directory.
 public class Solution {
     public static void main(String[] args) {
 
