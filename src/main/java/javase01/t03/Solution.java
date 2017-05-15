@@ -20,6 +20,7 @@ public class Solution {
         double b = scanner.nextDouble();
         System.out.println("Enter step for function:");
         double h = scanner.nextDouble();
+        scanner.close();
 
         System.out.println("----------------------------");
         System.out.println("|      x     |   tgFunc(x) |");

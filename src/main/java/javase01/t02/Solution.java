@@ -24,6 +24,7 @@ public class Solution {
 
         System.out.println("Enter Epsilon");
         double eps = scanner.nextDouble();
+        scanner.close();
         if (eps<0) {
             throw new IllegalArgumentException("eps should be greater than 0");
         }
