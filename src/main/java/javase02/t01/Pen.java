@@ -22,7 +22,7 @@ public class Pen {
     private float nibSize;             // in mm
     private float weight;
     private String description;
-    private Integer price;
+    private Integer price;             // in cents, before output needs to dived by 100
 
     Pen(String brand, String name, String vendorCode, PenType penType, Material material, String inkColor, float nibSize,
         float weight, String description, Integer price) {

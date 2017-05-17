@@ -58,4 +58,6 @@ public class Solution {
         workPlaces.add(new WorkPlace(employee3, profStuff));
         return workPlaces;
     }
+
+    /// one getEmploy
 }
