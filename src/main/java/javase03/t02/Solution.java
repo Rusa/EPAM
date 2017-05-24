@@ -26,30 +26,35 @@ public class Solution {
         }
         ResourceBundle rb = ResourceBundle.getBundle("javase03.t02.Solution", supportedLocales[--lang]);
 
-        System.out.println(rb.getString("greeting"));
+        System.out.println(rbToUTFString(rb, "greeting"));
 
-        System.out.println(new String(rb.getString("question1").getBytes("ISO-8859-1"), "UTF-8"));
-        System.out.println(rb.getString("question2"));
-        System.out.println(rb.getString("question3"));
+        System.out.println(rbToUTFString(rb, "question1"));
+        System.out.println(rbToUTFString(rb, "question2"));
+        System.out.println(rbToUTFString(rb, "question3"));
+
 
 
         while (true) {
             switch (sc.nextInt()) {
                 case 0:
-                    System.out.println(rb.getString("exit"));
+                    System.out.println(rbToUTFString(rb,"exit"));
                     return;
                 case 1:
-                    System.out.println(rb.getString("answer1"));
+                    System.out.println(rbToUTFString(rb,"answer1"));
                     break;
                 case 2:
-                    System.out.println(rb.getString("answer2"));
+                    System.out.println(rbToUTFString(rb,"answer2"));
                     break;
                 case 3:
-                    System.out.println(rb.getString("answer3"));
+                    System.out.println(rbToUTFString(rb,"answer3"));
                     break;
                 default:
-                    System.out.println(rb.getString("defaultAnswer"));
+                    System.out.println(rbToUTFString(rb,"defaultAnswer"));
             }
         }
+    }
+
+    private static String rbToUTFString(ResourceBundle rb, String str) throws UnsupportedEncodingException {
+        return new String(rb.getString(str).getBytes("ISO-8859-1"), "UTF-8");
     }
 }
