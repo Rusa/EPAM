@@ -15,11 +15,11 @@ import java.util.List;
 
 
 public class Solution {
-    private static final Comparator<Stationery> compareByCost = (o1, o2) -> (o1.getCost() - o2.getCost());//TODO:final
+    private static final Comparator<Stationery> compareByCost = (o1, o2) -> (o1.getCost() - o2.getCost());
 
-    private static final Comparator<Stationery> compareByName = (o1, o2) -> o1.getName().compareTo(o2.getName());//TODO:final
+    private static final Comparator<Stationery> compareByName = (o1, o2) -> o1.getName().compareTo(o2.getName());
 
-    private static final BiComparator costAndNameComparator = new BiComparator(compareByCost, compareByName);//TODO:final
+    private static final BiComparator costAndNameComparator = new BiComparator(compareByCost, compareByName);
 
     public static void main(String[] args) {
 
@@ -37,8 +37,8 @@ public class Solution {
 }
 
 class BiComparator implements Comparator<Stationery> {
-    private final Comparator<Stationery> cmp1;//TODO:final
-    private final Comparator<Stationery> cmp2;//TODO:final
+    private final Comparator<Stationery> cmp1;
+    private final Comparator<Stationery> cmp2;
 
     public BiComparator(Comparator<Stationery> cmp1, Comparator<Stationery> cmp2) {
         this.cmp1 = cmp1;

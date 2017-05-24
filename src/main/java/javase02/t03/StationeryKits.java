@@ -16,7 +16,7 @@ public class StationeryKits {
 
     public enum KitType {BASIC, STANDARD, PROFESSIONAL}
 
-    public static List<Stationery>  stationeryKit(KitType kitType) {
+    public static List<Stationery> stationeryKit(KitType kitType) {
 
         switch (kitType) {
             case BASIC:
@@ -46,8 +46,9 @@ public class StationeryKits {
                         new Notepad("Sketch notepad", 150)
                 );
             default:
+                System.out.println("Where is no type " + kitType);
                 throw new IllegalArgumentException(
-                        "unknown type TYPE"
+                        "unknown type" + kitType
                 );
         }
     }

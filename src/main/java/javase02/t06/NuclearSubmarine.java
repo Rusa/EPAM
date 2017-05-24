@@ -13,6 +13,11 @@ import javase02.t07.NSubmarineAnnotation;
 public class NuclearSubmarine {
     private EngineForNuclearSubmarine engine;
 
+
+    /**
+     *  Submarine constructor
+     *
+     */
     public NuclearSubmarine() {
         this.engine = new EngineForNuclearSubmarine();
     }
@@ -20,10 +25,12 @@ public class NuclearSubmarine {
      *  Inner class EngineForNuclearSubmarine
      */
     private final class EngineForNuclearSubmarine {
+        boolean isEngineOn;
         /**
          *  Start engine access only from NuclearSubmarine class
          */
         void startEngine() {
+            isEngineOn = true;
             System.out.println("Engine started");
         }
 
@@ -31,6 +38,7 @@ public class NuclearSubmarine {
          *  Stop engine access only from NuclearSubmarine class
          */
         void stopEngine() {
+            isEngineOn = false;
             System.out.println("Engine stop");
         }
     }
@@ -43,9 +51,13 @@ public class NuclearSubmarine {
         System.out.println("Move Backward");
     }
 
-    public void GoToSailing() {
+    public void GoToSailing() throws InterruptedException {
         engine.startEngine();
+        System.out.println("Nuclear Submarine started mission ");
         moveForward();
-        System.out.println("Nuclear Submarine moving ");
+    }
+
+    public void stop(){
+        engine.stopEngine();
     }
 }

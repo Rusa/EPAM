@@ -13,47 +13,40 @@ public class Solution {
 
         List<Student> studentList = generateStudents(100); // generate all Students
 
-        List<GroupByDiscipline> groupsList = new ArrayList<>();
+        List<RatingByDiscipline> groupsList = new ArrayList<>(); // empty list
 
+        // Add random rating for all Students
         for (Discipline discipline: Discipline.values()) {
-            GroupByDiscipline group = new GroupByDiscipline(discipline);
+            RatingByDiscipline group = new RatingByDiscipline(discipline);
 
             Random randomizer = new Random();
-            int amountOfStudents = randomizer.nextInt(studentList.size());
+            int amountOfStudents = randomizer.nextInt(studentList.size()); // random amount of student for each Discipline
 
             for(int j = 0; j<amountOfStudents; j++){
                 int idxOfStudent = randomizer.nextInt(studentList.size());
 
                 group.setStudentRating(studentList.get(idxOfStudent), 100*randomizer.nextDouble());
+//                group.setStudentRating(studentList.get(idxOfStudent), Arrays.asList(0.5, 10.0));
             }
             groupsList.add(group);
         }
 
-        /// View all Students from list of GroupByDiscipline by Discipline
 
-        for(GroupByDiscipline gd: groupsList){
+
+        /// View all Students from list of RatingByDiscipline by Discipline
+        for(RatingByDiscipline gd: groupsList){
             System.out.println(gd.getDiscipline());
             gd.getStudentRating().forEach((student, rating) -> System.out.println(student.getName() + " " + rating));
             System.out.println();
         }
 
-//        topTenStudents()
-
+        for(RatingByDiscipline gd: groupsList){
+            System.out.printf("Top Students in %s are: \n", gd.getDiscipline()  );
+            gd.topNStudents(10);
+        }
     }
 
-    static Student[] topTenStudents(List<GroupByDiscipline> groupsList){
-        groupsList.forEach(group -> {
-            System.out.println(group.getDiscipline());
-//            Collections.sort(group.getStudentRating(), new Comparator<T>() {
-//                @Override
-//                public int compare(T o1, T o2) {
-//                    return 0;
-//                }
-//            });
-//            group.getStudentRating().forEach();
-        });
-        return null;
-    }
+
 
     static List<Student> generateStudents(int n){
         List<Student> studentList = new ArrayList<>();
