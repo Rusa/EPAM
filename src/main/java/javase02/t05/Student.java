@@ -1,6 +1,5 @@
 package javase02.t05;
 
-import java.util.List;
 
 /**
  * Created by rusamaha on 5/17/17.
