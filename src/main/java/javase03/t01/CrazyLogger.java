@@ -18,19 +18,23 @@ public class CrazyLogger {
         sb.append(sdf.format(date)).append(message).append(">|||-_-|||<").append('\n');
     }
 
-    void showLog(){
-        System.out.println(sb);
+    public String showLog(){
+        return sb.toString();
     }
 
-    void search(String s) {
+    public String search(String s) {
+        StringBuilder res = new StringBuilder();
         Pattern pattern = Pattern.compile("[0-9].*"+s+".*(>|||-_-|||<)");
         Matcher matcher = pattern.matcher(sb.toString());
         int i = 1;
         while (matcher.find()) {
+            String entry = matcher.group().toString();
+            res.append(entry);
             System.out.println("Found entry number " + i++);
-            System.out.println(matcher.group());
-        }
+            System.out.println(entry);
 
+        }
+        return res.toString();
     }
     //LocaleDateTime Java8
 }

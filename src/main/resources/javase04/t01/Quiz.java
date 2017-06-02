@@ -20,7 +20,7 @@ public class Solution {
 
         Scanner sc = new Scanner(System.in);
         int lang = sc.nextInt();
-        if (lang>2 || lang <1) {
+        if (lang > 2 || lang < 1) {
             System.out.println("You can choose only 1 or 2");
             return;
         }
@@ -35,19 +35,19 @@ public class Solution {
         while (true) {
             switch (sc.nextInt()) {
                 case 0:
-                    System.out.println(rbToUTFString(rb,"exit"));
+                    System.out.println(rbToUTFString(rb, "exit"));
                     return;
                 case 1:
-                    System.out.println(rbToUTFString(rb,"answer1"));
+                    System.out.println(rbToUTFString(rb, "answer1"));
                     break;
                 case 2:
-                    System.out.println(rbToUTFString(rb,"answer2"));
+                    System.out.println(rbToUTFString(rb, "answer2"));
                     break;
                 case 3:
-                    System.out.println(rbToUTFString(rb,"answer3"));
+                    System.out.println(rbToUTFString(rb, "answer3"));
                     break;
                 default:
-                    System.out.println(rbToUTFString(rb,"defaultAnswer"));
+                    System.out.println(rbToUTFString(rb, "defaultAnswer"));
             }
         }
     }

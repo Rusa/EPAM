@@ -16,7 +16,7 @@ public class Solution {
 
         crazyLogger.addMessage("ddddas asddddd rusamaha ds sds");
 
-        crazyLogger.showLog();
+        System.out.println(crazyLogger.showLog());
 
         crazyLogger.search("rusamaha");
 
