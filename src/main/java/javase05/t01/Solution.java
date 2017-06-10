@@ -39,12 +39,10 @@ public class Solution {
                     }
                     break;
                     case "cd": {
-                        if (isArg2(cmdArgs2)) break;
+                        if (!isArg2(cmdArgs2)) break;
                         path = getPath(path, cmdArgs2);
                         if (path == null) {
                             System.out.println("No such file or directory!");
-                        } else if (cmdArgs2.equals("..")) {
-                            path.getParent();
                         } else {
                             if (!Files.isDirectory(path)) {
                                 System.out.println("File " + path + " is not a directory!");
@@ -54,7 +52,7 @@ public class Solution {
                     }
                     break;
                     case "cat": {
-                        if (isArg2(cmdArgs2)) break;
+                        if (!isArg2(cmdArgs2)) break;
                         path = getPath(path, cmdArgs2);
                         if (path == null) {
                             System.out.println("No such file or directory!");
@@ -71,7 +69,7 @@ public class Solution {
                     }
                     break;
                     case "rm": {
-                        if (isArg2(cmdArgs2)) break;
+                        if (!isArg2(cmdArgs2)) break;
                         path = getPath(path, cmdArgs2);
                         if (Files.isRegularFile(path)) {
                             path.toFile().delete();
@@ -80,7 +78,7 @@ public class Solution {
                     }
                     break;
                     case "touch": {
-                        if (isArg2(cmdArgs2)) break;
+                        if (!isArg2(cmdArgs2)) break;
                         path = getPath(path, cmdArgs2);
 
                         Path file = path.resolve(cmdArgs2);
@@ -96,7 +94,7 @@ public class Solution {
                     }
                     break;
                     case "write": {
-                        if (isArg2(cmdArgs2)) break;
+                        if (!isArg2(cmdArgs2)) break;
                         path = getPath(path, cmdArgs2);
 
                         if (Files.isRegularFile(path) && Files.isReadable(path)) {
@@ -143,9 +141,9 @@ public class Solution {
     private static boolean isArg2(String cmdArgs2) {
         if (cmdArgs2 == null) {
             System.out.println("Incorrect num of args");
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     private static void rootDirectory() {
